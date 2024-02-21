@@ -9,22 +9,22 @@ then
     sudo cp /home/ansible/ansible.cfg /etc/ansible/ansible.cfg
     sudo cp /home/ansible/hosts /etc/ansible/hosts
 fi
-pip3 --break-system-packages install ansible 
-pip3 --break-system-packages install ansible-lint
-pip3 --break-system-packages install ansible-runner
-pip3 --break-system-packages install ansible-builder
-pip3 --break-system-packages install netmiko
-pip3 --break-system-packages install netaddr
-pip3 --break-system-packages install argcomplete
+pip3 install --break-system-packages ansible 
+pip3 install --break-system-packages ansible-lint
+pip3 install --break-system-packages ansible-runner
+pip3 install --break-system-packages ansible-builder
+pip3 install --break-system-packages netmiko
+pip3 install --break-system-packages netaddr
+pip3 install --break-system-packages argcomplete
 activate-global-python-argcomplete
-pip3 --break-system-packages install  cryptography --upgrade  
-pip3 --break-system-packages install  pywinrm 
-pip3 --break-system-packages install  pywinrm[credssp] 
-pip3 --break-system-packages install  pywinrm[kerberos] 
-pip3 --break-system-packages install  molecule[ansible,docker,lint] 
-pip3 --break-system-packages install  docker 
-pip3 --break-system-packages install  ansible-navigator[ansible-core]
-pip3 --break-system-packages install  --upgrade   git+https://github.com/networkop/docker-topo.git
+pip3 install --break-system-packages  cryptography --upgrade  
+pip3 install --break-system-packages  pywinrm 
+pip3 install --break-system-packages  pywinrm[credssp] 
+pip3 install --break-system-packages  pywinrm[kerberos] 
+pip3 install --break-system-packages  molecule[ansible,docker,lint] 
+pip3 install --break-system-packages  docker 
+pip3 install --break-system-packages  ansible-navigator[ansible-core]
+pip3 install --break-system-packages  --upgrade   git+https://github.com/networkop/docker-topo.git
 ansible-galaxy collection install arista.eos
 ansible-galaxy collection install community.general
 docker pull registry.iutbeziers.fr/ceosimage:4.25.0F
