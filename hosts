@@ -16,7 +16,7 @@ rocky-4 ansible_host=127.0.0.1 ansible_ssh_private_key_file=~/.ssh/id_ed25519 an
 debian
 rocky
 
-[arista]
-ceos1 ansible_host=192.168.128.1
-ceos2 ansible_host=192.168.128.2 
-ceos3 ansible_host=192.168.128.3 
+[eos]
+clab-srlceos01-ceos1 ansible_host=172.100.100.2
+clab-srlceos01-ceos2 ansible_host=172.100.100.3
+clab-srlceos01-ceos3 ansible_host=172.100.100.4
