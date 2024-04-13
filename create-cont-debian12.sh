@@ -13,6 +13,7 @@ docker stop $(docker ps -a -q)
 sleep 5s
 docker rm $(docker ps -a -q)
 sleep 10s
+clab  destroy srlceos01.clab.yml
 echo "effacement des network dockers existants"
 echo "################################"
 for net in  $(docker network ls -q);  do docker network rm $net; done
@@ -43,6 +44,6 @@ sudo ansible-galaxy collection install arista.eos
 sudo docker pull registry.iutbeziers.fr/ceosimage:4.29.02F
 sudo docker tag registry.iutbeziers.fr/ceosimage:4.29.02F ceosimage:latest
 echo "création des containers routers Arista ceos"
-
+clab  deploy srlceos01.clab.yml
 echo "voila le boulot"
 docker ps -a
