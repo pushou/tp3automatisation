@@ -43,9 +43,6 @@ sudo ansible-galaxy collection install arista.eos
 sudo docker pull registry.iutbeziers.fr/ceosimage:4.29.02F
 sudo docker tag registry.iutbeziers.fr/ceosimage:4.29.02F ceosimage:latest
 echo "création des containers routers Arista ceos"
-sudo yes | sudo /usr/local/bin/docker-topo --create -s /home/ansible/topo-ansible.yaml
-sudo echo "alias ceos1='docker exec -it 3-node_cEOS-1 Cli'" >> /root/.bashrc
-sudo echo "alias ceos2='docker exec -it 3-node_cEOS-2 Cli'" >> /root/.bashrc
-sudo echo "alias ceos3='docker exec -it 3-node_cEOS-3 Cli'" >> /root/.bashrc
+
 echo "voila le boulot"
 docker ps -a

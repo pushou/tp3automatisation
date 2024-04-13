@@ -24,7 +24,7 @@ pip3 install --break-system-packages  pywinrm[kerberos]
 pip3 install --break-system-packages  molecule[ansible,docker,lint] 
 pip3 install --break-system-packages  docker 
 pip3 install --break-system-packages  ansible-navigator[ansible-core]
-pip3 install --break-system-packages  --upgrade   git+https://github.com/networkop/docker-topo.git
+pip3 install --break-system-packages  ansible-pylibssh
 ansible-galaxy collection install arista.eos
 ansible-galaxy collection install nokia.srlinux
 ansible-galaxy collection install community.general

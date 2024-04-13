@@ -1,0 +1,24 @@
+# topology documentation: http://containerlab.dev/lab-examples/srl-ceos/
+name: srlceos01
+
+mgmt:
+  network: custom_mgmt                # management network name
+  ipv4-subnet: 172.100.100.0/24       # ipv4 range
+
+topology:
+  nodes:
+    srl:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux
+    ceos1:
+      kind: arista_ceos
+      image: registry.iutbeziers.fr/ceosimage:4.29.02F
+    ceos2:
+      kind: arista_ceos
+      image: registry.iutbeziers.fr/ceosimage:4.29.02F
+    ceos3:
+      kind: arista_ceos
+      image: registry.iutbeziers.fr/ceosimage:4.29.02F
+
+  links:
+    - endpoints: ["srl:e1-1", "ceos1:eth1"]
