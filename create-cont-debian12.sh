@@ -28,7 +28,7 @@ echo "################################"
 echo "supression des adresses des containers existants dans /etc/hosts"
 echo "################################"
 awk -v  opt="i" -v lineNo="6" 'NR > lineNo-( opt == "i"? 1 : 0 ){exit};1' /etc/hosts > /tmp/hosts && mv /tmp/hosts /etc/hosts
-echo "Création des containers Debian 11 et rocky 8"
+echo "Création des containers Debian et rocky "
 echo "################################"
 for x in $(seq 0 4); do docker run -d -p 322$x:22 -v /root/.ssh:/root/.ssh --privileged --cgroupns=host --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:rw --net brrock_n_$x  --name  rocky-$x --hostname rocky-$x  registry.iutbeziers.fr/rocky9:ssh  ;done
 for x in $(seq 0 4); do docker run -d -p 222$x:22 -v /root/.ssh:/root/.ssh --privileged --cgroupns=host --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:rw --net brddeb_n_$x  --name  debian-$x --hostname debian-$x  registry.iutbeziers.fr/debian11:ssh ;done
