@@ -17,6 +17,14 @@ debian
 rocky
 
 [eos]
-clab-srlceos01-ceos1 ansible_host=172.100.100.2
+clab-srlceos01-ceos1 ansible_host=172.100.100.2 
 clab-srlceos01-ceos2 ansible_host=172.100.100.3
 clab-srlceos01-ceos3 ansible_host=172.100.100.4
+
+[eos:vars]
+ansible_connection=ansible.netcommon.network_cli
+ansible_network_os=arista.eos.eos
+ansible_user=admin
+ansible_password=admin
+ansible_become=yes
+ansible_become_method=enable
