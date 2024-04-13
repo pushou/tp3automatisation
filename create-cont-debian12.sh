@@ -30,10 +30,8 @@ echo "################################"
 awk -v  opt="i" -v lineNo="6" 'NR > lineNo-( opt == "i"? 1 : 0 ){exit};1' /etc/hosts > /tmp/hosts && mv /tmp/hosts /etc/hosts
 echo "Création des containers Debian 11 et rocky 8"
 echo "################################"
-#for x in $(seq 0 4); do docker run -d -p 322$x:22 -v /root/.ssh:/root/.ssh --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro  --net brcent_n_$x  --name  centos-$x --hostname centos-$x  registry.iutbeziers.fr/centos-ssh ;done
-for x in $(seq 0 4); do docker run -d -p 322$x:22 -v /root/.ssh:/root/.ssh --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro  --net brrock_n_$x  --name  rocky-$x --hostname rocky-$x  registry.iutbeziers.fr/rocky8:ssh  ;done
-#for x in $(seq 0 4); do docker run -d -p 222$x:22 -v /root/.ssh:/root/.ssh --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --net brddeb_n_$x  --name  debian-$x --hostname debian-$x  registry.iutbeziers.fr/debian11:ssh ;done
-for x in $(seq 0 4); do docker run -d -p 222$x:22 -v /root/.ssh:/root/.ssh --privileged --privileged --cgroupns=host --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup --net brddeb_n_$x  --name  debian-$x --hostname debian-$x  registry.iutbeziers.fr/debian11:ssh ;done
+for x in $(seq 0 4); do docker run -d -p 322$x:22 -v /root/.ssh:/root/.ssh --privileged --cgroupns=host --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:rw --net brrock_n_$x  --name  rocky-$x --hostname rocky-$x  registry.iutbeziers.fr/rocky9:ssh  ;done
+for x in $(seq 0 4); do docker run -d -p 222$x:22 -v /root/.ssh:/root/.ssh --privileged --cgroupns=host --tmpfs /tmp --tmpfs /run --tmpfs /run/lock -v /sys/fs/cgroup:/sys/fs/cgroup:rw --net brddeb_n_$x  --name  debian-$x --hostname debian-$x  registry.iutbeziers.fr/debian11:ssh ;done
 echo "creation des ip des containers dans /etc/hosts"
 echo "################################"
 for x in $(seq 0 4); do echo "$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' rocky-$x) rocky-$x" >> /etc/hosts;done
