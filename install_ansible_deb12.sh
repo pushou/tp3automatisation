@@ -28,8 +28,8 @@ pip3 install --break-system-packages  ansible-pylibssh
 ansible-galaxy collection install arista.eos
 ansible-galaxy collection install nokia.srlinux
 ansible-galaxy collection install community.general
-docker pull registry.iutbeziers.fr/ceosimage:4.25.0F
-docker tag registry.iutbeziers.fr/ceosimage:4.25.0F registry.iutbeziers.fr/ceosimage:latest
+docker pull registry.iutbeziers.fr/ceosimage:4.29.02F
+docker tag registry.iutbeziers.fr/ceosimage:4.29.02F registry.iutbeziers.fr/ceosimage:latest
 docker pull ghcr.io/nokia/srlinux
 docker tag ghcr.io/nokia/srlinux ghcr.io/nokia/srlinux:latest
 docker pull registry.iutbeziers.fr/debian12:ssh 
