@@ -1,0 +1,328 @@
+{
+  "links": [
+    {
+      "a": {
+        "interface": "eth1",
+        "node": "L1",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "eth1",
+        "node": "S1",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth2",
+        "node": "L1",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "eth1",
+        "node": "S2",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth1",
+        "node": "L2",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "eth2",
+        "node": "S1",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth2",
+        "node": "L2",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "eth2",
+        "node": "S2",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth1",
+        "node": "L3",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "eth3",
+        "node": "S1",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth2",
+        "node": "L3",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "eth3",
+        "node": "S2",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth1",
+        "node": "L4",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "eth4",
+        "node": "S1",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth2",
+        "node": "L4",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "eth4",
+        "node": "S2",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth1",
+        "node": "H1",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "",
+        "node": "(lan:9)",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth1",
+        "node": "H2",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "",
+        "node": "(lan:9)",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth1",
+        "node": "H3",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "",
+        "node": "(lan:9)",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth1",
+        "node": "EXT1",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "",
+        "node": "(stub:10)",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth2",
+        "node": "EXT1",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "eth5",
+        "node": "S1",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth2",
+        "node": "H1",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "eth3",
+        "node": "L1",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "interface": "eth2",
+        "node": "H2",
+        "peer": "z"
+      },
+      "z": {
+        "interface": "eth3",
+        "node": "L2",
+        "peer": "a"
+      }
+    }
+  ],
+  "name": "netlab",
+  "nodes": {
+    "(lan:9)": {
+      "group": "tier-1",
+      "ipv4_address": "",
+      "kind": "(host bridge: netlab_9)",
+      "labels": {
+        "graph-icon": "expand",
+        "graph-level": 1
+      },
+      "name": "(lan:9)"
+    },
+    "(stub:10)": {
+      "group": "as65100",
+      "ipv4_address": "",
+      "kind": "(host bridge: netlab_10)",
+      "labels": {
+        "graph-icon": "expand",
+        "graph-level": 1
+      },
+      "name": "(stub:10)"
+    },
+    "EXT1": {
+      "group": "as65100",
+      "image": "registry.iutbeziers.fr/ceos:4.33.1F",
+      "kind": "eos",
+      "labels": {
+        "graph-icon": "switch",
+        "graph-level": 1
+      },
+      "mgmt-ipv4-address": "192.168.121.107",
+      "mgmt-ipv6-address": "",
+      "name": "EXT1"
+    },
+    "H1": {
+      "group": "tier-1",
+      "image": "wbitt/network-multitool:latest",
+      "kind": "linux",
+      "labels": {
+        "graph-icon": "server",
+        "graph-level": 1
+      },
+      "mgmt-ipv4-address": "192.168.121.108",
+      "mgmt-ipv6-address": "",
+      "name": "H1"
+    },
+    "H2": {
+      "group": "tier-1",
+      "image": "wbitt/network-multitool:latest",
+      "kind": "linux",
+      "labels": {
+        "graph-icon": "server",
+        "graph-level": 1
+      },
+      "mgmt-ipv4-address": "192.168.121.109",
+      "mgmt-ipv6-address": "",
+      "name": "H2"
+    },
+    "H3": {
+      "group": "tier-1",
+      "image": "wbitt/network-multitool:latest",
+      "kind": "linux",
+      "labels": {
+        "graph-icon": "server",
+        "graph-level": 1
+      },
+      "mgmt-ipv4-address": "192.168.121.110",
+      "mgmt-ipv6-address": "",
+      "name": "H3"
+    },
+    "L1": {
+      "group": "as65000",
+      "image": "registry.iutbeziers.fr/ceos:4.33.1F",
+      "kind": "eos",
+      "labels": {
+        "graph-icon": "switch",
+        "graph-level": 1
+      },
+      "mgmt-ipv4-address": "192.168.121.101",
+      "mgmt-ipv6-address": "",
+      "name": "L1"
+    },
+    "L2": {
+      "group": "as65000",
+      "image": "registry.iutbeziers.fr/ceos:4.33.1F",
+      "kind": "eos",
+      "labels": {
+        "graph-icon": "switch",
+        "graph-level": 1
+      },
+      "mgmt-ipv4-address": "192.168.121.102",
+      "mgmt-ipv6-address": "",
+      "name": "L2"
+    },
+    "L3": {
+      "group": "as65000",
+      "image": "registry.iutbeziers.fr/ceos:4.33.1F",
+      "kind": "eos",
+      "labels": {
+        "graph-icon": "switch",
+        "graph-level": 1
+      },
+      "mgmt-ipv4-address": "192.168.121.103",
+      "mgmt-ipv6-address": "",
+      "name": "L3"
+    },
+    "L4": {
+      "group": "as65000",
+      "image": "registry.iutbeziers.fr/ceos:4.33.1F",
+      "kind": "eos",
+      "labels": {
+        "graph-icon": "switch",
+        "graph-level": 1
+      },
+      "mgmt-ipv4-address": "192.168.121.104",
+      "mgmt-ipv6-address": "",
+      "name": "L4"
+    },
+    "S1": {
+      "group": "as65000",
+      "image": "registry.iutbeziers.fr/ceos:4.33.1F",
+      "kind": "eos",
+      "labels": {
+        "graph-icon": "switch",
+        "graph-level": 1
+      },
+      "mgmt-ipv4-address": "192.168.121.105",
+      "mgmt-ipv6-address": "",
+      "name": "S1"
+    },
+    "S2": {
+      "group": "as65000",
+      "image": "registry.iutbeziers.fr/ceos:4.33.1F",
+      "kind": "eos",
+      "labels": {
+        "graph-icon": "switch",
+        "graph-level": 1
+      },
+      "mgmt-ipv4-address": "192.168.121.106",
+      "mgmt-ipv6-address": "",
+      "name": "S2"
+    }
+  },
+  "type": "clab"
+}

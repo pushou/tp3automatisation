@@ -1,0 +1,26 @@
+# Ansible inventory created from ['/home/ansible/netlab/topology.yml', 'package:topology-defaults.yml']
+#
+
+ansible_connection: docker
+ansible_network_os: linux
+ansible_python_interpreter: auto_silent
+ansible_ssh_pass: vagrant
+ansible_user: root
+docker_shell: sh -il
+features:
+  dhcp:
+    client:
+      ipv4: true
+      ipv6: true
+    relay:
+      ipv4: true
+    server: true
+  initial:
+    ipv6_use_ra: true
+  lag:
+    passive: false
+  routing:
+    static: true
+netlab_linux_distro: vanilla
+netlab_lldp_enable: false
+netlab_net_tools: false

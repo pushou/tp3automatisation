@@ -1,0 +1,50 @@
+---
+defaults.device: eos
+defaults.devices.eos.image: registry.iutbeziers.fr/ceos:4.33.1F
+#defaults.devices.linux.group_vars.netlab_lldp_enable: true
+provider: clab
+defaults.providers.clab.bridge_type: ovs-bridge
+tools:
+ graphite:
+module: [ ospf,bgp ]
+plugin: [ fabric ]
+fabric.spines: 2
+fabric.leafs: 4
+bgp.as: 65000
+
+nodes:
+  EXT1:
+    bgp.as: 65100
+    module: [bgp]
+  H1:
+    device: linux
+    image: wbitt/network-multitool:latest
+  H2:
+    device: linux
+    image: wbitt/network-multitool:latest
+  H3:
+    device: linux
+    image: wbitt/network-multitool:latest
+
+
+links:
+ - H1:
+   H2:
+   H3:
+   type: lan
+ - EXT1:
+      ipv4: 192.168.1.232/24
+   clab:
+      uplink: eth1
+ - EXT1:
+   S1:
+   bgp:
+      advertise: true
+ -  H1:
+    L1:
+ -  H2:
+    L2:
+
+groups:
+  spines:
+    bgp.rr: True
