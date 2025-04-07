@@ -1,7 +1,0 @@
-# Ansible inventory created from ['/home/ansible/netlab/topology.yml', 'package:topology-defaults.yml']
-#
-
-netlab_module:
-- routing
-- bgp
-- ospf
