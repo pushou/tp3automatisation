@@ -31,4 +31,5 @@ docker tag registry.iutbeziers.fr/ceos:4.33.1F registry.iutbeziers.fr/ceos:lates
 docker image pull ghcr.io/nokia/srlinux
 docker tag ghcr.io/nokia/srlinux ghcr.io/nokia/srlinux:latest
 docker image pull registry.iutbeziers.fr/debian12:ssh 
+docker image pull registry.iutbeziers.fr/debianiut:13
 docker image pull registry.iutbeziers.fr/rocky9:ssh
