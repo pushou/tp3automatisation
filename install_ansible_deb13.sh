@@ -1,5 +1,6 @@
 #!/bin/bash
 apt-get -y install pipx jupyter python3-virtualenv python3-setuptools build-essential libssl-dev libffi-dev python3-dev libkrb5-dev sshpass  yamllint 
+export PATH="~/.local/bin:$PATH
 if [ ! -d /etc/ansible ]
 then
     mkdir /etc/ansible
