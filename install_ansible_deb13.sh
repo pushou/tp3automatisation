@@ -25,7 +25,7 @@ pipx ensurepath
 ansible-galaxy collection install arista.eos
 ansible-galaxy collection install nokia.srlinux
 ansible-galaxy collection install community.general
-docker image pull docker image pull registry.iutbeziers.fr/ceos:4.33.1F
+docker image pull registry.iutbeziers.fr/ceos:4.33.1F              
 docker tag registry.iutbeziers.fr/ceos:4.33.1F registry.iutbeziers.fr/ceosimage:latest
 docker tag registry.iutbeziers.fr/ceos:4.33.1F registry.iutbeziers.fr/ceos:latest
 docker image pull ghcr.io/nokia/srlinux
