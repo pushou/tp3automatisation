@@ -26,8 +26,8 @@ ansible-galaxy collection install arista.eos
 ansible-galaxy collection install nokia.srlinux
 ansible-galaxy collection install community.general
 docker image pull docker image pull registry.iutbeziers.fr/ceos:4.33.1F
-docker tag docker image pull registry.iutbeziers.fr/ceos:4.33.1F registry.iutbeziers.fr/ceosimage:latest
-docker tag docker image pull registry.iutbeziers.fr/ceos:4.33.1F registry.iutbeziers.fr/ceos:latest
+docker tag registry.iutbeziers.fr/ceos:4.33.1F registry.iutbeziers.fr/ceosimage:latest
+docker tag registry.iutbeziers.fr/ceos:4.33.1F registry.iutbeziers.fr/ceos:latest
 docker image pull ghcr.io/nokia/srlinux
 docker tag ghcr.io/nokia/srlinux ghcr.io/nokia/srlinux:latest
 docker image pull registry.iutbeziers.fr/debian12:ssh 
